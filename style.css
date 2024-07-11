@@ -1,0 +1,22 @@
+body {
+    background-color: grey;
+    text-align: center;
+}
+
+h1{
+    color: Navy;
+}
+
+table{
+    background-color: purple;
+    border: 1px solid black;
+    border-radius: 10px;
+}
+
+th, td {
+    border: 2px solid purple;
+    border-radius: 10px;
+    background-color: grey;
+    border-color: purple;
+    cursor: pointer;
+}
