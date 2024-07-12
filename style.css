@@ -1,11 +1,33 @@
-body {
+html, body {
     background-color: grey;
     text-align: center;
     font-size: 24px;
+    height: 100%; /* Garante que a altura da página seja 100% */
+    margin: 0; /* Remove margens padrão do body */
+    padding: 0; /* Remove padding padrão do body */
+}
+
+header, footer {
+    height: 10%; /* Cada um ocupa 10% da altura */
+    background-color: lightblue; /* Cor de fundo (pode ser ajustada) */
+}
+
+nav{
+    height: 10%; /* Cada um ocupa 10% da altura */
+    background-color: yellow; /* Cor de fundo (pode ser ajustada) */
+}
+
+main {
+    height: 60%; /* O main ocupa 70% da altura */
 }
 
 h1{
     color: Navy;
+}
+
+p, h1, h2, h3, h4, h5, h6 {
+    margin: 0;
+    padding: 0;
 }
 
 table{
