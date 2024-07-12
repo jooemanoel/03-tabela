@@ -1,6 +1,7 @@
 body {
     background-color: grey;
     text-align: center;
+    font-size: 24px;
 }
 
 h1{
@@ -8,6 +9,13 @@ h1{
 }
 
 table{
+    max-width: 800px;
+    width: 100%;
+    table-layout: fixed;
+    margin-left: auto;
+    margin-right: auto;
+    vertical-align: middle;
+    line-height: 1.5;
     background-color: purple;
     border: 1px solid black;
     border-radius: 10px;
