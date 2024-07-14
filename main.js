@@ -5,14 +5,20 @@ if (c1 === null) {
     c1 = parseInt(c1);
     document.getElementById("n1").innerText = c1;
 }
-document.getElementById("n1").onclick = function(){
+
+document.addEventListener("click", function(event){
+    if (event.target.id == "n1"){
     c1++;
     localStorage.setItem('c1', c1);
     document.getElementById("n1").innerText = c1;
-}
-document.getElementById("n1").oncontextmenu = function(e){
-    e.preventDefault();
+    }
+});
+
+document.addEventListener("contextmenu", function(event){
+    event.preventDefault();
+    if (event.target.id == "n1"){
     c1--;
     localStorage.setItem('c1', c1);
     document.getElementById("n1").innerText = c1;
-}
+    }
+});

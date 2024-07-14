@@ -18,16 +18,16 @@ nav{
 }
 
 main {
-    height: 60%; /* O main ocupa 70% da altura */
-}
-
-h1{
-    color: Navy;
+    height: 70%; /* O main ocupa 70% da altura */
 }
 
 p, h1, h2, h3, h4, h5, h6 {
     margin: 0;
     padding: 0;
+}
+
+h1{
+    color: Navy;
 }
 
 table{
@@ -44,9 +44,8 @@ table{
 }
 
 th, td {
+    background-color: grey;
+    cursor: pointer;
     border: 2px solid purple;
     border-radius: 10px;
-    background-color: grey;
-    border-color: purple;
-    cursor: pointer;
 }
