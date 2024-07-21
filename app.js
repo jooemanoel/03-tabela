@@ -1,21 +1,14 @@
-let textoTitulo = document.createElement('h1');
-let textoNovo = document.createElement('h2');
-let tabelaItens = document.createElement('table');
-let textoApagar = document.createElement('h2');
+const textoMain = document.querySelector('main');
+const textoNovo = document.querySelector('#novo');
+const textoApagar = document.querySelector('#apagar');
+const tabelaItens = document.createElement('table');
 
 let listaItens = JSON.parse(localStorage.getItem('listaItens')) || [];
 
 function criaElementosIniciais() {
-    textoTitulo.textContent = 'Tabela de Produtos em Estoque';
-    document.body.appendChild(textoTitulo);
-    textoNovo.innerHTML = 'Adicionar Novo Item';
     textoNovo.onclick = novoItem;
-    document.body.appendChild(textoNovo);
     criaTabelaItens();
-    textoApagar.textContent = 'Apagar Tudo';
     textoApagar.onclick = apagarLista;
-    document.body.appendChild(textoApagar);
-    
 }
 
 function criaTabelaItens() {
@@ -24,7 +17,7 @@ function criaTabelaItens() {
     for (let i = 0; i < listaItens.length; i++) {
         adicionaItem(listaItens[i], "td");
     }
-    document.body.appendChild(tabelaItens);
+    textoMain.appendChild(tabelaItens);
 }
 
 function adicionaItem(item, tag) {
@@ -52,6 +45,9 @@ function novoItem(){
     let item = {id: "", qt: 0, md: ""};
     item.id = prompt('Nome do item: ');
     item.md = prompt('Unidade de Medida: ');
+    for (let i = 0; i < listaItens.length; i++) {
+        if(item.id == listaItens[i].id) return;
+    }
     salvaItem(item);
     location.reload();
 }
