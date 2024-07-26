@@ -1,3 +1,10 @@
+:root{
+    --cor1: gray;
+    --cor2: black;
+    --cor3: yellow;
+    --cor4: purple;
+}
+
 *{
     margin: 0;
     padding: 0;
@@ -5,7 +12,7 @@
 }
 
 body {
-    background-color: grey;
+    background-color: var(--cor1);
     text-align: center;
     font-size: 1rem;
 }
@@ -38,6 +45,7 @@ body {
     border-radius: 1rem;
     background-color: white;    
     cursor: pointer;
+    text-decoration: none;
 }
 
 .botao:hover{
