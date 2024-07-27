@@ -1,53 +1,25 @@
-import { Lista } from "./lista.js";
+import { Lista } from "./Lista.js";
+import { Form } from "./Form.js";
+import { Tabela } from "./Tabela.js";
 
+const elementoMain = document.querySelector('main');
 let lista = new Lista('itens');
+const tabela = new Tabela(elementoMain, lista);
+const form = new Form(elementoMain, lista);
 
-function adicionar(){
-    lista.novoItem();
+const botaoNovo = document.querySelector('#novo');
+botaoNovo.onclick = function(){
+    tabela.ocultar();
+    form.mostrar();
 }
 
-function criaElementosIniciais() {
-    const botaoNovo = document.querySelector('#novo');
-    const botaoApagar = document.querySelector('#apagar');
-    botaoNovo.onclick = adicionar;
-    botaoApagar.onclick = lista.apagar;
-    renderizarTabela();
+const botaoVer = document.querySelector('#ver');
+botaoVer.onclick = function(){
+    form.ocultar();
+    tabela.mostrar();
 }
 
-function renderizarTabela() {
-    const tabelaItens = document.querySelector('.tabela');
-    let htmlTabela = `<tr><th>Produto</th><th>Quantidade</th><th>Medida</th></tr>`;
-    for (const item of lista.itens) {
-        htmlTabela += `<tr><td>${item.id}</td><td id="${item.id}">${item.qt}</td><td>${item.md}</td></tr>`;
-    }
-    tabelaItens.innerHTML = htmlTabela;
-}
-
-document.addEventListener("click", function (event) {
-    for (let i = 0; i < lista.itens.length; i++) {
-        if (lista.itens[i].id == event.target.id) {
-            lista.itens[i].qt++;
-            event.target.textContent = lista.itens[i].qt;
-            localStorage.setItem('itens', JSON.stringify(lista.itens));
-            return;
-        }
-    }
-});
-
-document.addEventListener("contextmenu", function (event) {
-    event.preventDefault();
-    for (let i = 0; i < lista.itens.length; i++) {
-        if (lista.itens[i].id == event.target.id) {
-            if(lista.itens[i].qt == 0)
-                return;
-            lista.itens[i].qt--;
-            event.target.textContent = lista.itens[i].qt;
-            localStorage.setItem('itens', JSON.stringify(lista.itens));
-            return;
-        }
-    }
-});
-
-window.onload = function () {
-    criaElementosIniciais();
+const botaoApagar = document.querySelector('#apagar');
+botaoApagar.onclick = function(){
+    lista.apagar();
 }
