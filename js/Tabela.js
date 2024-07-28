@@ -1,4 +1,3 @@
-
 export class Tabela{
     constructor(elementoPai, lista){
         // Cria o elemento Tabela

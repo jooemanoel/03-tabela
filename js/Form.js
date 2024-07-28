@@ -6,9 +6,16 @@ export class Form {
         this.elementoForm.innerHTML = `
             <h1 class="formulario__item">Novo Produto</h1>
             <label class="formulario__item" for="id">Produto:</label>
-            <input class="formulario__item input" type="text" id="id"></input>
+            <input class="formulario__item input" type="text" id="id" required autofocus></input>
             <label class="formulario__item" for="md">Medida:</label>
-            <input class="formulario__item input" type="text" id="md"></input>
+            <input class="formulario__item input" id="md" type="text" list="medidas" required></input>
+            <datalist id="medidas">
+                <option value="un">
+                <option value="kg">
+                <option value="cx">
+                <option value="lt">
+                <option value="pct">
+            </datalist>
             <input class="formulario__item submit" type="submit" name="sub"></input>
         `;
         this.elementoForm.onsubmit = function (event) {
@@ -17,10 +24,6 @@ export class Form {
             const md = elementos[1].value;
             console.log(elementos[0].value);
             console.log(elementos[1].value);
-            if (id === null || id === '')
-                return;
-            if (md === '' || md === null)
-                md = 'un';
             for (const item of lista.itens) {
                 if (id === item.id)
                     return;
