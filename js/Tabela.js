@@ -1,5 +1,5 @@
-export class Tabela{
-    constructor(elementoPai, lista){
+export class Tabela {
+    constructor(elementoPai, lista) {
         // Cria o elemento Tabela
         this.elementoTabela = document.createElement('table');
         this.elementoTabela.classList.add('tabela');
@@ -11,18 +11,18 @@ export class Tabela{
         }
         this.elementoTabela.innerHTML = htmlTabela;
         // Renderiza a Tabela no elemento Pai
-        this.elementoPai.appendChild(this.elementoTabela);
+        this.mostrar();
         // Adiciona os botões de clique
-        for (const item of lista.itens){
+        for (const item of lista.itens) {
             const elementoQt = document.querySelector(`#${item.id}`);
-            elementoQt.addEventListener('click', function(){
+            elementoQt.addEventListener('click', function () {
                 item.qt++;
                 elementoQt.textContent = item.qt;
                 lista.salvar();
             });
-            elementoQt.addEventListener('contextmenu', function(event){
+            elementoQt.addEventListener('contextmenu', function (event) {
                 event.preventDefault();
-                if(item.qt == 0)
+                if (item.qt == 0)
                     return;
                 item.qt--;
                 elementoQt.textContent = item.qt;
@@ -31,10 +31,10 @@ export class Tabela{
         }
     }
 
-    mostrar(){
+    mostrar() {
         this.elementoPai.appendChild(this.elementoTabela);
     }
-    ocultar(){
+    ocultar() {
         this.elementoPai.removeChild(this.elementoTabela);
     }
 }

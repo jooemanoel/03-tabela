@@ -6,16 +6,15 @@ export class Form {
         this.elementoForm.innerHTML = `
             <h1 class="formulario__item">Novo Produto</h1>
             <label class="formulario__item" for="id">Produto:</label>
-            <input class="formulario__item input" type="text" id="id" required autofocus></input>
+            <input class="formulario__item input" type="text" id="id" required></input>
             <label class="formulario__item" for="md">Medida:</label>
-            <input class="formulario__item input" id="md" type="text" list="medidas" required></input>
-            <datalist id="medidas">
-                <option value="un">
-                <option value="kg">
-                <option value="cx">
-                <option value="lt">
-                <option value="pct">
-            </datalist>
+            <select class="formulario__item input" id="md" name="md" required>
+                <option value="un">un</option>
+                <option value="kg">kg</option>
+                <option value="cx">cx</option>
+                <option value="lt">lt</option>
+                <option value="pct">pct</option>
+            </select>
             <input class="formulario__item submit" type="submit" name="sub"></input>
         `;
         this.elementoForm.onsubmit = function (event) {
