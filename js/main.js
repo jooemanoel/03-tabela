@@ -108,7 +108,6 @@ export class Form {
     }
 }
 
-
 const elementoMain = document.querySelector('main');
 let lista = new Lista('itens');
 const tabela = new Tabela(elementoMain, lista);
