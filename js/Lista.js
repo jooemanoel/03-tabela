@@ -3,10 +3,18 @@ import { Item } from "./Item.js";
 export class Lista {
     constructor(nomeDaLista) {
         this.itens = JSON.parse(localStorage.getItem(nomeDaLista)) || [];
+        this.crescente = false;
         this.ordenar();
     }
     ordenar() {
-        this.itens = this.itens.sort((i1, i2) => i2.qt - i1.qt);
+        if (this.crescente) {
+            this.itens = this.itens.sort((i1, i2) => i1.qt - i2.qt);
+            this.crescente = false;
+        }
+        else {
+            this.itens = this.itens.sort((i1, i2) => i2.qt - i1.qt);
+            this.crescente = true;
+        }
     }
     salvar() {
         this.ordenar();

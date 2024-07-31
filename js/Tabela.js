@@ -6,9 +6,9 @@ export class Tabela {
         this.elementoPai = elementoPai;
         this.lista = lista;
         // Preenche os dados da tabela
-        this.preencherTabela();
+        this.preencher();
         // Renderiza a tabela no elemento Pai
-        this.mostrar();
+        this.exibir();
         // Adiciona os botões demudança de quantidade
         for (const item of lista.itens) {
             const elementoQt = document.querySelector(`#${item.id}`);
@@ -27,7 +27,7 @@ export class Tabela {
             });
         }
     }
-    preencherTabela() {
+    preencher() {
         // Preenche o cabeçalho da Tabela
         let htmlTabela = `<tr><th id="id">Produto</th><th id="qt">Quantidade</th><th id="md">Medida</th></tr>`;
         // Preenche os dados na Tabela de acordo com a Lista
@@ -36,7 +36,7 @@ export class Tabela {
         }
         this.elementoTabela.innerHTML = htmlTabela;
     }
-    mostrar() {
+    exibir() {
         this.elementoPai.appendChild(this.elementoTabela);
     }
     ocultar() {

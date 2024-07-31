@@ -30,7 +30,7 @@ export class Form {
             lista.novoItem(id, md);
         }
     }
-    mostrar() {
+    exibir() {
         this.elementoPai.appendChild(this.elementoForm);
     }
     ocultar() {

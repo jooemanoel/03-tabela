@@ -12,14 +12,14 @@ const botaoNovo = document.querySelector('#novo');
 botaoNovo.onclick = function () {
     elementoAtivo.ocultar();
     elementoAtivo = form;
-    form.mostrar();
+    form.exibir();
 }
 
 const botaoVer = document.querySelector('#ver');
 botaoVer.onclick = function () {
     elementoAtivo.ocultar();
     elementoAtivo = tabela;
-    tabela.mostrar();
+    tabela.exibir();
 }
 
 const botaoApagar = document.querySelector('#apagar');
@@ -30,5 +30,5 @@ botaoApagar.onclick = function () {
 const botaoQt = document.querySelector('#qt');
 botaoQt.onclick = function () {
     lista.ordenar();
-    tabela.preencherTabela();
+    tabela.preencher();
 }
