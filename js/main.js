@@ -26,3 +26,9 @@ const botaoApagar = document.querySelector('#apagar');
 botaoApagar.onclick = function () {
     lista.apagar();
 }
+
+const botaoQt = document.querySelector('#qt');
+botaoQt.onclick = function () {
+    lista.ordenar();
+    tabela.preencherTabela();
+}
