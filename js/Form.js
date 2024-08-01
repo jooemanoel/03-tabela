@@ -3,6 +3,7 @@ export class Form {
         this.elemento = document.createElement('form');
         this.elemento.classList.add('formulario');
         this.elementoPai = elementoPai;
+        this.ativo = false;
         this.elemento.innerHTML = `
             <h1 class="formulario__item">Novo Produto</h1>
             <label class="formulario__item" for="id">Produto:</label>
@@ -31,9 +32,15 @@ export class Form {
         }
     }
     exibir() {
-        this.elementoPai.appendChild(this.elemento);
+        if (!this.ativo) {
+            this.elementoPai.appendChild(this.elemento);
+            this.ativo = true;
+        }
     }
     ocultar() {
-        this.elementoPai.removeChild(this.elemento);
+        if (this.ativo) {
+            this.elementoPai.removeChild(this.elemento);
+            this.ativo = false;
+        }
     }
 }

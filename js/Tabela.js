@@ -5,6 +5,7 @@ export class Tabela {
         this.elemento.classList.add('tabela');
         this.elementoPai = elementoPai;
         this.lista = lista;
+        this.ativo = false;
         // Preenche os dados da tabela
         this.preencher();
         // Renderiza a tabela no elemento Pai
@@ -37,9 +38,15 @@ export class Tabela {
         this.elemento.innerHTML = htmlTabela;
     }
     exibir() {
-        this.elementoPai.appendChild(this.elemento);
+        if (!this.ativo) {
+            this.elementoPai.appendChild(this.elemento);
+            this.ativo = true;
+        }
     }
     ocultar() {
-        this.elementoPai.removeChild(this.elemento);
+        if (this.ativo) {
+            this.elementoPai.removeChild(this.elemento);
+            this.ativo = false;
+        }
     }
 }
