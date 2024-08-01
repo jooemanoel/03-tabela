@@ -1,8 +1,8 @@
 export class Tabela {
     constructor(elementoPai, lista) {
         // Cria o elemento Tabela
-        this.elementoTabela = document.createElement('table');
-        this.elementoTabela.classList.add('tabela');
+        this.elemento = document.createElement('table');
+        this.elemento.classList.add('tabela');
         this.elementoPai = elementoPai;
         this.lista = lista;
         // Preenche os dados da tabela
@@ -34,12 +34,12 @@ export class Tabela {
         for (const item of this.lista.itens) {
             htmlTabela += `<tr><td>${item.id}</td><td id="${item.id}">${item.qt}</td><td>${item.md}</td></tr>`;
         }
-        this.elementoTabela.innerHTML = htmlTabela;
+        this.elemento.innerHTML = htmlTabela;
     }
     exibir() {
-        this.elementoPai.appendChild(this.elementoTabela);
+        this.elementoPai.appendChild(this.elemento);
     }
     ocultar() {
-        this.elementoPai.removeChild(this.elementoTabela);
+        this.elementoPai.removeChild(this.elemento);
     }
 }

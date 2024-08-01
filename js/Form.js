@@ -1,9 +1,9 @@
 export class Form {
     constructor(elementoPai, lista) {
-        this.elementoForm = document.createElement('form');
-        this.elementoForm.classList.add('formulario');
+        this.elemento = document.createElement('form');
+        this.elemento.classList.add('formulario');
         this.elementoPai = elementoPai;
-        this.elementoForm.innerHTML = `
+        this.elemento.innerHTML = `
             <h1 class="formulario__item">Novo Produto</h1>
             <label class="formulario__item" for="id">Produto:</label>
             <input class="formulario__item input" type="text" id="id" required></input>
@@ -17,7 +17,7 @@ export class Form {
             </select>
             <input class="formulario__item submit" type="submit" name="sub"></input>
         `;
-        this.elementoForm.onsubmit = function (event) {
+        this.elemento.onsubmit = function (event) {
             const elementos = document.querySelectorAll('.input');
             const id = elementos[0].value;
             const md = elementos[1].value;
@@ -31,9 +31,9 @@ export class Form {
         }
     }
     exibir() {
-        this.elementoPai.appendChild(this.elementoForm);
+        this.elementoPai.appendChild(this.elemento);
     }
     ocultar() {
-        this.elementoPai.removeChild(this.elementoForm);
+        this.elementoPai.removeChild(this.elemento);
     }
 }
