@@ -1,8 +1,9 @@
 import { Item } from "./Item.js";
+
 export class Lista {
-    itens;
-    crescente;
-    constructor(nomeDaLista) {
+    itens: Item[];
+    crescente: boolean;
+    constructor(nomeDaLista: string) {
         this.itens = JSON.parse(localStorage.getItem(nomeDaLista)) || [];
         this.crescente = false;
         this.ordenar();

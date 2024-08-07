@@ -1,7 +1,9 @@
 import { Component } from "./Component.js";
-export class Tabela extends Component {
-    lista;
-    constructor(elementoPai, lista) {
+import { Lista } from "./Lista.js";
+
+export class Tabela extends Component{
+    lista: Lista;
+    constructor(elementoPai: HTMLElement, lista: Lista) {
         // Cria o elemento Tabela
         super(elementoPai, 'table');
         this.elemento.classList.add('tabela');

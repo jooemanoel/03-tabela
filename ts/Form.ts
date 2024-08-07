@@ -1,6 +1,8 @@
 import { Component } from "./Component.js";
+import { Lista } from "./Lista.js";
+
 export class Form extends Component {
-    constructor(elementoPai, lista) {
+    constructor(elementoPai: HTMLElement, lista: Lista) {
         super(elementoPai, 'form');
         this.elemento.classList.add('formulario');
         this.elemento.innerHTML = `
@@ -19,13 +21,13 @@ export class Form extends Component {
         `;
         this.elemento.onsubmit = function (event) {
             const elementos = document.querySelectorAll('.input');
-            const id = elementos[0].value;
-            const md = elementos[1].value;
+            const id = (elementos[0] as HTMLInputElement).value;
+            const md = (elementos[1] as HTMLInputElement).value;
             for (const item of lista.itens) {
                 if (id === item.id)
                     return;
             }
             lista.novoItem(id, md);
-        };
+        }
     }
 }
