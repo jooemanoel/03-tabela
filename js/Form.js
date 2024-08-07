@@ -5,16 +5,18 @@ export class Form extends Component {
         this.elemento.classList.add('formulario');
         this.elemento.innerHTML = `
             <h1 class="formulario__item">Novo Produto</h1>
-            <label class="formulario__item" for="id">Produto:</label>
+            <label class="formulario__item">Produto:
             <input class="formulario__item input" type="text" id="id" required></input>
-            <label class="formulario__item" for="md">Medida:</label>
-            <select class="formulario__item input" id="md" name="md" required>
+            </label>
+            <label class="formulario__item">Medida:
+            <select class="formulario__item input" id="md" required>
                 <option value="un">un</option>
                 <option value="kg">kg</option>
                 <option value="cx">cx</option>
                 <option value="lt">lt</option>
                 <option value="pct">pct</option>
             </select>
+            </label>
             <input class="formulario__item submit" type="submit" name="sub"></input>
         `;
         this.elemento.onsubmit = function (event) {

@@ -2,10 +2,10 @@ import { Lista } from "./Lista.js";
 import { Form } from "./Form.js";
 import { Tabela } from "./Tabela.js";
 
-const elementoMain = document.querySelector('main');
-const lista = new Lista('itens');
-const tabela = new Tabela(elementoMain, lista);
-const form = new Form(elementoMain, lista);
+const elementoMain: HTMLElement = document.querySelector('main') as HTMLElement;
+const lista: Lista = new Lista('itens');
+const tabela: Tabela = new Tabela(elementoMain, lista);
+const form: Form = new Form(elementoMain, lista);
 let elementoAtivo: any = tabela;
 
 const botaoNovo = document.querySelector('#novo') as HTMLButtonElement;
